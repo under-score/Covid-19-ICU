@@ -5,8 +5,6 @@
 # URL <- c("https://opendata.arcgis.com/datasets/dd4580c810204019a7b8eb3e0b329dd6_0.csv")
 # download.file(URL, destfile=tmp, mode='wb')
 # rki <- read.csv(tmp,stringsAsFactors =FALSE)
-# i <- sapply(rki, is.factor)
-# rki[i] <- lapply(rki[i], as.character)
 # rki <- rki %>%
 #   mutate_if(is.factor, as.character),
 #     KreisID = sprintf("%05d", as.numeric(IdLandkreis)),
@@ -16,7 +14,6 @@
 
 fn <- paste0("/Users/wjst/Desktop/rki.Rdata")
 load(file=fn)
-
 rki <- rki %>%
   group_by(dt, KreisID) %>%
   summarise_at(c("AnzahlFall","AnzahlTodesfall"),  sum) %>%
