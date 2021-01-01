@@ -12,7 +12,7 @@
 #   filter(AnzahlFall>=0) %>%
 #   select(KreisID,dt,AnzahlFall,AnzahlTodesfall)
 
-fn <- paste0("/Users/wjst/Desktop/rki.Rdata")
+fn <- paste0("/Users/me/Desktop/rki.Rdata")
 load(file=fn)
 rki <- rki %>%
   group_by(dt, KreisID) %>%
@@ -28,11 +28,11 @@ rki <- rki %>%
 # open -a "Google Chrome" https://www.datawrapper.de/_/wwQvR/
 # daily task ...
 # dk <- c( "2020-11-01.csv","2020-11-04.csv","2020-11-05.csv","2020-11-06.csv","2020-11-07.csv","2020-11-08.csv","2020-11-10.csv","2020-11-11.csv","2020-11-13.csv","2020-11-14.csv","2020-11-15.csv","2020-11-16.csv","2020-11-18.csv","2020-11-20.csv","2020-11-22.csv","2020-11-24.csv","2020-11-26.csv","2020-11-28.csv","2020-11-30.csv")
-# fn=paste0("/Users/wjst/Desktop/",dk[1])
+# fn=paste0("/Users/me/Desktop/",dk[1])
 # divi <-read.csv(fn,stringsAsFactors =FALSE)
 # divi$dt <- c(dk[1])
 # for (i in dk[-1]) {
-#  fn=paste0("/Users/wjst/Documents/Daten/Projekte/Corona/divi/",i)
+#  fn=paste0("/Users/me/Desktop/",i)
 #  tmp <-read.csv(fn,stringsAsFactors =FALSE) %>%
 #    mutate(dt=i) %>%
 #    rename_with(~ gsub(".", "PERCENT", .x, fixed = TRUE))
@@ -43,7 +43,7 @@ rki <- rki %>%
 #  mutate( dt= as.Date( gsub(".csv", "PERCENT", dt, fixed = TRUE)) ) %>%
 #  select(KreisID,dt, COVID, COVIDBEATMET)
 
-fn <- paste0("/Users/wjst/Desktop/divi.Rdata")
+fn <- paste0("/Users/me/Desktop/divi.Rdata")
 load(file=fn)
 ```
 
