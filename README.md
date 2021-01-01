@@ -4,11 +4,12 @@
 # tmp = tempfile()
 # URL <- c("https://opendata.arcgis.com/datasets/dd4580c810204019a7b8eb3e0b329dd6_0.csv")
 # download.file(URL, destfile=tmp, mode='wb')
-# rki <- read.csv(tmp)
+# rki <- read.csv(tmp,stringsAsFactors =FALSE)
 # i <- sapply(rki, is.factor)
 # rki[i] <- lapply(rki[i], as.character)
 # rki <- rki %>%
-#   mutate( KreisID = sprintf("%05d", as.numeric(IdLandkreis)),
+#   mutate_if(is.factor, as.character),
+#     KreisID = sprintf("%05d", as.numeric(IdLandkreis)),
 #     dt= as.Date(Refdatum) ) %>%
 #   filter(AnzahlFall>=0) %>%
 #   select(KreisID,dt,AnzahlFall,AnzahlTodesfall)
@@ -28,6 +29,7 @@ rki <- rki %>%
 
 ```R
 # open -a "Google Chrome" https://www.datawrapper.de/_/wwQvR/
+# daily task ...
 # dk <- c( "2020-11-01.csv","2020-11-04.csv","2020-11-05.csv","2020-11-06.csv","2020-11-07.csv","2020-11-08.csv","2020-11-10.csv","2020-11-11.csv","2020-11-13.csv","2020-11-14.csv","2020-11-15.csv","2020-11-16.csv","2020-11-18.csv","2020-11-20.csv","2020-11-22.csv","2020-11-24.csv","2020-11-26.csv","2020-11-28.csv","2020-11-30.csv")
 # fn=paste0("/Users/wjst/Desktop/",dk[1])
 # divi <-read.csv(fn,stringsAsFactors =FALSE)
